@@ -5,19 +5,19 @@ body {
 }
 
 header {
-    background: #48a2d6;
+    background: #b28fbd;
     color: white;
     padding: 15px;
     text-align: center;
+    position: relative;
 }
 
 header a img {
     position: absolute;
     top: 12px;
     left: 15px;
-    width: px;   /* ✅ slightly larger */
+    width: 120px; /* fixed */
 }
-
 
 nav a {
     color: white;
@@ -27,23 +27,51 @@ nav a {
 }
 
 main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* LAYOUT */
+.content-layout {
+    display: flex;
+    gap: 30px;
     padding: 20px;
+    align-items: flex-start;
+}
+
+/* LEFT SIDE */
+.text-section {
+    width: 65%;
+}
+
+/* RIGHT SIDE */
+.image-section {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 h2 {
     color: #0077cc;
 }
 
-form input, form textarea {
-    width: 100%;
-    max-width: 300px;
+form input,
+form textarea {
+    width: 200%;
+    max-width: 400px;
 }
 
 button {
     background: #0077cc;
     color: white;
     border: none;
-    padding: 8px 15px;
+    padding: 9px 15px;
     cursor: pointer;
 }
 
@@ -52,9 +80,67 @@ button:hover {
 }
 
 footer {
-    background: #0077cc;
+    background: #ac7aa7;
     color: white;
     text-align: center;
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 200px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .content-layout {
+        flex-direction: column;
+    }
+
+    .text-section,
+    .image-section {
+        width: 100%;
+    }
+}
+.image-section {
+    width: 59%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px; /* ✅ moves image down */
+}
+.content-layout {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+/* LEFT */
+.text-section {
+    width: 65%;
+}
+
+/* RIGHT */
+.image-section {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px; /* ✅ pushes image down */
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.image-section {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;   /* ✅ pushes image to bottom */
+    padding-bottom: 20px;    /* ✅ небольшой spacing from bottom */
+}
+
+/* make image bigger */
+.image-section img {
+    width: 110%;   /* ✅ makes image larger */
+    max-width: 400px; /* optional limit so it doesn't get huge */
+    height: auto;
+    border-radius: 10px;
 }
