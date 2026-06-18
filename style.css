@@ -1,9 +1,17 @@
-body {
-    font-family: Arial, sans-serif;
+/* GLOBAL */
+html, body {
+    height: 100%;
     margin: 0;
-    background: #f2f2f2;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
 header {
     background: #b28fbd;
     color: white;
@@ -16,7 +24,7 @@ header a img {
     position: absolute;
     top: 12px;
     left: 15px;
-    width: 120px; /* fixed */
+    width: 120px;
 }
 
 nav a {
@@ -26,9 +34,11 @@ nav a {
     font-weight: bold;
 }
 
+/* MAIN CONTENT */
 main {
     max-width: 1200px;
     margin: auto;
+    flex: 1; /* ✅ pushes footer down */
 }
 
 /* LAYOUT */
@@ -39,34 +49,40 @@ main {
     align-items: flex-start;
 }
 
-/* LEFT SIDE */
+/* LEFT SECTION */
 .text-section {
     width: 65%;
 }
 
-/* RIGHT SIDE */
+/* RIGHT SECTION */
 .image-section {
     width: 35%;
     display: flex;
     justify-content: center;
+    align-items: flex-end;   /* pushes image down */
+    padding-bottom: 20px;
 }
 
 .image-section img {
-    width: 100%;
+    width: 110%;
+    max-width: 400px;
     height: auto;
     border-radius: 10px;
 }
 
+/* TEXT */
 h2 {
     color: #0077cc;
 }
 
+/* FORM */
 form input,
 form textarea {
     width: 200%;
     max-width: 400px;
 }
 
+/* BUTTON */
 button {
     background: #0077cc;
     color: white;
@@ -79,15 +95,15 @@ button:hover {
     background: #005fa3;
 }
 
+/* FOOTER */
 footer {
     background: #ac7aa7;
     color: white;
     text-align: center;
     padding: 10px;
-    margin-top: 200px;
 }
 
-/* MOBILE FIX */
+/* MOBILE */
 @media (max-width: 768px) {
     .content-layout {
         flex-direction: column;
@@ -97,50 +113,8 @@ footer {
     .image-section {
         width: 100%;
     }
-}
-.image-section {
-    width: 59%;
-    display: flex;
-    justify-content: center;
-    margin-top: 40px; /* ✅ moves image down */
-}
-.content-layout {
-    display: flex;
-    gap: 30px;
-    padding: 20px;
-    align-items: flex-start;
-}
 
-/* LEFT */
-.text-section {
-    width: 65%;
-}
-
-/* RIGHT */
-.image-section {
-    width: 35%;
-    display: flex;
-    justify-content: center;
-    margin-top: 50px; /* ✅ pushes image down */
-}
-
-.image-section img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-.image-section {
-    width: 35%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;   /* ✅ pushes image to bottom */
-    padding-bottom: 20px;    /* ✅ небольшой spacing from bottom */
-}
-
-/* make image bigger */
-.image-section img {
-    width: 110%;   /* ✅ makes image larger */
-    max-width: 400px; /* optional limit so it doesn't get huge */
-    height: auto;
-    border-radius: 10px;
+    .image-section {
+        align-items: center;
+    }
 }
