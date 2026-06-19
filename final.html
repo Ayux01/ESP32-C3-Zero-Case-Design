@@ -1,117 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Design | ESP32 Case Project</title>
+/* GLOBAL */
+html, body {
+    height: 100%;
+    margin: 0;
+}
 
-    <link rel="stylesheet" href="style.css">
-</head>
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+}
 
-<body>
+/* HEADER */
+header {
+    background: #b28fbd;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+}
 
-<header>
-    
-<a href="index.html">
-    <img src="images/ayux.png" alt="Ayux logo" width="120">
-</a>
+header a img {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    width: 120px;
+}
 
-    <h1>Final </h1>
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="prototype1.html">Prototype 1</a>
-        <a href="prototype2.html">Prototype 2</a>
-        <a href="final.html">final                                                                                               </a>
-    </nav>
-</header>
+/* MAIN CONTENT */
+main {
+    max-width: 1200px;
+    margin: auto;
+    flex: 1; /* ✅ pushes footer down */
+}
 
-<main>
+/* LAYOUT */
+.content-layout {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    align-items: flex-start;
+}
 
+/* LEFT SECTION */
+.text-section {
+    width: 65%;
+}
 
-    <img src="images/final.png" alt="Final ESP32 C3 case design" width="300" height="300">
+/* RIGHT SECTION */
+.image-section {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;   /* pushes image down */
+    padding-bottom: 20px;
+}
 
-    
-    <h2>Overview</h2>
-    <p>
-        The final design is the completed version of the ESP32 C3 case. It improves on both 
-        Prototype 1 and Prototype 2 by fixing earlier issues and creating a stronger, more usable case.
-    </p>
+.image-section img {
+    width: 110%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
 
-  
-    <h2>Key Features</h2>
-    <ul>
-        <li>Perfect fit for the ESP32 board</li>
-        <li>Improved ventilation for cooling</li>
-        <li>Easy access to USB port and pins</li>
-        <li>Stronger and more durable structure</li>
-        <li>Secure lid attachment</li>
-    </ul>
+/* TEXT */
+h2 {
+    color: #0077cc;
+}
 
- 
-    <h2>Comparison Table</h2>
-    <table>
-        <tr>
-            <th>Feature</th>
-            <th>Prototype 1</th>
-            <th>Prototype 2</th>
-            <th>Final Design</th>
-        </tr>
-        <tr>
-            <td>Fit</td>
-            <td>Loose</td>
-            <td>Better</td>
-            <td>Perfect</td>
-        </tr>
-        <tr>
-            <td>Ventilation</td>
-            <td>None</td>
-            <td>Basic</td>
-            <td>Improved</td>
-        </tr>
-        <tr>
-            <td>Durability</td>
-            <td>Weak</td>
-            <td>Stronger</td>
-            <td>Very Strong</td>
-        </tr>
-        <tr>
-            <td>Accessibility</td>
-            <td>Limited</td>
-            <td>Improved</td>
-            <td>Easy</td>
-        </tr>
-    </table>
-                                                                                                                                                                                                                                                                                                      
+/* FORM */
+form input,
+form textarea {
+    width: 200%;
+    max-width: 400px;
+}
 
-    <h2>Testing Results</h2>
-    <ul>
-        <li>✅ Board fits securely inside the case</li>
-        <li>✅ Ventilation prevents overheating</li>
-        <li>✅ USB and pins are easy to access</li>
-        <li>✅ Case is strong and stable</li>
-    </ul>
+/* BUTTON */
+button {
+    background: #0077cc;
+    color: white;
+    border: none;
+    padding: 9px 15px;
+    cursor: pointer;
+}
 
+button:hover {
+    background: #005fa3;
+}
 
-    <h2>Improvements Based on Feedback</h2>
-    <ul>
-        <li>Adjusted size for a tighter fit</li>
-        <li>Added more ventilation holes</li>
-        <li>Improved lid design for better security</li>
-    </ul>
+/* FOOTER */
+footer {
+    background: #ac7aa7;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
 
+/* MOBILE */
+@media (max-width: 768px) {
+    .content-layout {
+        flex-direction: column;
+    }
 
-    <h2>Future Improvements</h2>
-    <p>
-        Future versions could include waterproofing, better materials, and support for
-        additional electronic components.
-    </p>
+    .text-section,
+    .image-section {
+        width: 100%;
+    }
 
-</main>
+    .image-section {
+        align-items: center;
+    }
+}
+table {
+    width: 100%;
+    border-collapse: collapse; /* ✅ removes double borders */
+    margin-top: 20px;
+}
 
-<footer>
-    <p>© 2026 ESP32-C3 Case Project</p>
-</footer>
+th, td {
+    border: 1px solid #333; /* ✅ creates table lines */
+    padding: 10px;
+    text-align: center;
+}
 
-</body>
-</html>
+th {
+    background-color: #b28fbd; /* optional: match your header */
+    color: white;
+}
