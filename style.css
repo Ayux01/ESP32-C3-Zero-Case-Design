@@ -118,3 +118,19 @@ footer {
         align-items: center;
     }
 }
+table {
+    width: 100%;
+    border-collapse: collapse; /* ✅ removes double borders */
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #333; /* ✅ creates table lines */
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #b28fbd; /* optional: match your header */
+    color: white;
+}
